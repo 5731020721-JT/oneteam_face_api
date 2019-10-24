@@ -42,7 +42,7 @@ const subscriptionKey = '8b1838e13407455daf92a98bd51016ba';
 const uriDetect = 'https://southeastasia.api.cognitive.microsoft.com/face/v1.0/detect/';
 
 const imageUrl =
-    'https://images.app.goo.gl/gVuceGBXebq5fSvp6';
+    'https://noblesamplebot9711.blob.core.windows.net/oneteam/arun_1.PNG';
 
     // Request parameters.
 const params = {
