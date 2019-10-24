@@ -2,6 +2,7 @@
 
 const app = require('express')();
 const port = process.env.PORT || 3000;
+var cors = require('cors')
 
 const Pool = require('pg').Pool
 
@@ -14,6 +15,13 @@ const pool = new Pool({
   ssl:false
   
 })
+
+const issue2options = {
+  origin: true,
+  methods: ["POST"],
+  credentials: true,
+  maxAge: 3600
+};
 
 const request = require('request');
 
@@ -47,7 +55,7 @@ const options = {
 };
 
 
-app.get('/monthly/',function(req,res){
+app.get('/monthly/',cors(issue2options),function(req,res){
   request.post(options, (error, response, body) => {
     if (error) {
       console.log('Error: ', error);
