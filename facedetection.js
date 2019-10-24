@@ -3,6 +3,7 @@
 const app = require('express')();
 const port = process.env.PORT || 3000;
 var cors = require('cors')
+const bodyParser = require('body-parser')
 
 const Pool = require('pg').Pool
 
@@ -22,6 +23,13 @@ const issue2options = {
   credentials: true,
   maxAge: 3600
 };
+
+app.use(bodyParser.json())
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+)
 
 const request = require('request');
 
